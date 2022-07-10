@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: test the ${{github.event.inputs.environment}} environment
+      - name: Test the ${{github.event.inputs.environment}} env
         env: 
           environment: ${{github.event.inputs.environment}}
         run: |
-          echo: Hello, this is the ${{github.event.inputs.environment}}  server >> ${{env.environment}}.txt
+          echo Hello, world! This is ${{env.environment}} server >> ${{env.environment}}.txt 
       - name: upload a built artifact
         uses: actions/upload-artifact@v3.1.0
         with: 
